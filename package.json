@@ -1,19 +1,30 @@
 {
   "name": "digitales-berichtsheft",
   "version": "1.0.0",
-  "description": "",
+  "description": "A website to log and approve apprentice activities",
+  "keywords": [
+    "website"
+  ],
+  "homepage": "https://fia-gso.github.io/digitales-berichtsheft-scheunig-fia3d/",
+  "bugs": {
+    "url": "https://github.com/FIA-GSO/digitales-berichtsheft-scheunig-fia3d/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FIA-GSO/digitales-berichtsheft-scheunig-fia3d.git"
+  },
+  "license": "MIT",
+  "author": "Justin Scheunig",
+  "type": "module",
   "main": "index.html",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
     "@mephisto5558/eslint-config": "github:Mephisto5558/ESLint-Config",
     "better-typescript-lib": "^2.12.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "Justin Scheunig",
-  "license": "MIT",
-  "type": "module",
   "engines": {
     "node": ">=20.19.0"
   }
