@@ -2,8 +2,7 @@
 
 /** @import { Linter } from 'eslint' */
 
-import config from '@mephisto5558/eslint-config';
-import globals from 'globals';
+import config, { globals } from '@mephisto5558/eslint-config';
 
 /**
  * @type {Linter.Config[]}
