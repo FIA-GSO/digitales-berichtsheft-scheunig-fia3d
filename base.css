@@ -1,0 +1,29 @@
+:root {
+  font-family: sans-serif;
+  font-size: 1rem;
+
+  color-scheme: light dark;
+  --fg-color: light-dark(#121212, #f1f1f1);
+  --bg-color: light-dark(#f1f1f1, #121212);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  place-self: center;
+}
+
+button,
+input,
+select {
+  border-radius: .25rem;
+  overflow: auto;
+  padding: .5rem 1rem
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
