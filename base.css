@@ -55,6 +55,15 @@ button {
   border: none;
   cursor: pointer;
 }
+
+input, select, textarea {
+  background-color: var(--color-bg);
+  color: var(--color-bg-form-element);
+  border: var(--color-bg-form-element) 0.125rem solid;
+  border-radius: .25rem;
+  padding: .5rem 1rem
+}
+
 table {
   border-collapse: collapse;
 }
