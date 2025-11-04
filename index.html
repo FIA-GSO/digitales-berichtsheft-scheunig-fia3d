@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Digitales Berichtsheft</title>
+  <link rel='stylesheet' href='/base.css'>
+  <link rel='stylesheet' href='./index.css'>
+</head>
+<body>
+  <h1>Digitales Berichtsheft</h1>
+  <form id='login-form' method='post'>
+    <select name='role' id='role-select' required>
+      <option value=''>Rolle wählen</option>
+      <option value='azubi'>Auszubildende:r</option>
+      <option value='ausbilder'>Ausbilde:r</option>
+      <option value='lehrer'>Lehrer:in</option>
+    </select>
+    <div class='form-entry'>
+      <label for='mail-input'>E-Mail</label>
+      <input type='email' id='email-input' placeholder='E-Mail eintragen' required/>
+    </div>
+    <div class='form-entry'>
+      <label for='password-input'>Password</label>
+      <input type='password' id='password-input' placeholder='Passwort eintragen' required/>
+    </div>
+    <div id='buttons'>
+      <button id='login-button' action='./login'>Login</button>
+      <button id='register-button' action='./register'>Registrieren</button>
+      <button id='password-reset' action='./password-reset'>Passwort vergessen?</button>
+    </div>
+  </form>
+  <script src='./index.js'></script>
+</body>
+</html>

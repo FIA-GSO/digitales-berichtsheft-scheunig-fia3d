@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+form#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  width: 80%;
+  place-self: center;
+
+  & #role-select {
+    margin-bottom: 2rem;
+  }
+
+  & > .form-entry {
+    display: flex;
+
+    & > label {
+      place-content: center;
+    }
+
+    & > input {
+      margin-left: auto;
+      width: 60%;
+    }
+  }
+
+  & > #buttons {
+    margin-top: 2rem;
+
+    & > button:last-child {
+      float: right;
+    }
+  }
+}
