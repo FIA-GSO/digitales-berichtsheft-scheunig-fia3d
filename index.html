@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="light">
 <head>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <title>Digitales Berichtsheft</title>
   <link rel='stylesheet' href='/base.css'>
   <link rel='stylesheet' href='./index.css'>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
+  <button id="themeButton">
+    <span class="material-symbols-outlined">
+      light_mode
+    </span>
+  </button>
   <h1>Digitales Berichtsheft</h1>
   <form id='login-form' method='post'>
     <select name='role' id='role-select' required>
@@ -31,5 +37,6 @@
     </div>
   </form>
   <script src='./index.js'></script>
+  <script src='/theme_changer.js'></script>
 </body>
 </html>
