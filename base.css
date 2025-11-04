@@ -55,3 +55,6 @@ button {
   border: none;
   cursor: pointer;
 }
+table {
+  border-collapse: collapse;
+}

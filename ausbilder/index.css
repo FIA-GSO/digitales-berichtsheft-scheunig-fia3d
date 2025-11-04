@@ -1,0 +1,23 @@
+table {
+  & td {
+    padding: 0 1rem;
+    border: 1px solid var(--color-fg);
+    vertical-align: top;
+
+    &.labels-col {
+      width: 30%;
+    }
+
+    &.data-col {
+      position: relative;
+      width: 70%;
+
+      & > .review-button {
+        position: absolute;
+        right: .5rem;
+        bottom: .5rem;
+        place-content: center;
+      }
+    }
+  }
+}
