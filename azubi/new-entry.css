@@ -23,6 +23,6 @@ form input, select, textarea {
 
 .button-cancel {
   width: 29.25%;
-  background-color: var(--color-bg-button);
-  color: var(--color-fg-button);
+  background-color: lightgray;
+  color: #121212;
 }

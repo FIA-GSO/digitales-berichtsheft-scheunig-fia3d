@@ -24,15 +24,27 @@ body {
   --color-fg: #f1f1f1;
   --color-bg-button: #121212;
   --color-fg-button: lightgray;
-  --color-bg-form-element: #121212;
+  --color-bg-form-element: #1F1F1F;
   --color-fg-form-element: lightgray;
 }
 
 #themeButton {
   background-color: var(--color-bg-button);
   color: var(--color-fg-button);
-  width: 56px;
-  height: 40px;
+  border-radius: 100%;
+  border: .125rem solid var(--color-fg-button);
+  height: 36px;
+  width: 36px;
+
+  transition: 0.5s;
+}
+
+#themeButton:hover {
+  box-shadow: inset 0 0 0 2em var(--color-fg);
+}
+
+#themeButton > span {
+  line-height: unset;
 }
 
 * {
@@ -58,7 +70,7 @@ button {
 
 input, select, textarea {
   background-color: var(--color-bg);
-  color: var(--color-bg-form-element);
+  color: var(--color-fg);
   border: var(--color-bg-form-element) 0.125rem solid;
   border-radius: .25rem;
   padding: .5rem 1rem

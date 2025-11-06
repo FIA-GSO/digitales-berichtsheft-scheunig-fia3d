@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     themeButtonSpan = themeButton.querySelector('span');
 
   let currentThemeSetting = localStorage.getItem('theme');
-  themeButtonSpan.textContent = `${currentThemeSetting}_mode`;
+  let notCurrentThemeSetting = currentThemeSetting === 'dark' ? 'light' : 'dark';
+  themeButtonSpan.textContent = `${notCurrentThemeSetting}_mode`;
 
   if (currentThemeSetting)
     document.documentElement.dataset.theme = currentThemeSetting;
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', newTheme);
     currentThemeSetting = newTheme;
 
-    themeButtonSpan.textContent = `${currentThemeSetting}_mode`;
+    let notCurrentThemeSetting = currentThemeSetting === 'dark' ? 'light' : 'dark';
+    themeButtonSpan.textContent = `${notCurrentThemeSetting}_mode`;
   });
 });
