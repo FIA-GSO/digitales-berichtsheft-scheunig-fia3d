@@ -1,0 +1,28 @@
+h1, h2, p, .buttons {
+  width: 50%;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input, select, textarea {
+  width: 50%;
+  margin: 0.5rem auto;
+}
+
+.button-submit {
+  width: 70%;
+}
+
+.button-cancel {
+  width: 29.25%;
+  background-color: var(--color-bg-button);
+  color: var(--color-fg-button);
+}
