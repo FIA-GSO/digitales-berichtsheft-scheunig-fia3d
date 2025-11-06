@@ -4,6 +4,7 @@ h1, h2, p, .buttons {
 }
 
 h1, h2 {
+  padding-bottom: 1rem;
   text-align: center;
 }
 
@@ -19,10 +20,20 @@ form input, select, textarea {
 
 .button-submit {
   width: 70%;
+  transition: 0.5s;
+}
+
+.button-submit:hover {
+  background-color: #1F1F1F;
 }
 
 .button-cancel {
   width: 29.25%;
   background-color: lightgray;
   color: #121212;
+  transition: 0.5s;
+}
+
+.button-cancel:hover {
+  background-color: #b2b2b2;
 }
