@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const
-    themeButtons = document.querySelector('#themeButtons'),
+    themeButtonsContainer = document.querySelector('#themeButtons'),
+    themeButtons = themeButtonsContainer.querySelectorAll('.themeButton'),
     themeButton = document.querySelector('#themeButton'),
     themeButtonSpan = themeButton.querySelector('span');
     prettyPinkButton = document.querySelector('.theme-pretty-pink');
@@ -50,13 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   themeButton.addEventListener('mouseenter', () => {
-    prettyPinkButton.style.visibility = 'visible';
-    blackGoldButton.style.visibility = 'visible';
-    orangeBlackButton.style.visibility = 'visible';
-    themeButtons.addEventListener('mouseleave', () => {
-      prettyPinkButton.style.visibility = 'hidden';
-      blackGoldButton.style.visibility = 'hidden';
-      orangeBlackButton.style.visibility = 'hidden';
+    themeButtons.forEach(button => {
+      button.style.visibility = 'visible';
+    });
+    themeButtonsContainer.addEventListener('mouseleave', () => {
+      themeButtons.forEach(button => {
+        button.style.visibility = 'hidden';
+      });
     });
   });
   blackGoldButton.addEventListener('click', () => {

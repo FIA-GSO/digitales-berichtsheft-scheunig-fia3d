@@ -34,7 +34,7 @@ form input, select, textarea {
 .button-cancel {
   width: 29.25%;
   background-color: var(--color-primary);
-  color: #121212;
+  color: var(--color-fg-button);
   transition: 0.5s;
 }
 
