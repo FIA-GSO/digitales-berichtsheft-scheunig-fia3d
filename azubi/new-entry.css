@@ -8,6 +8,10 @@ h1, h2 {
   text-align: center;
 }
 
+h1, h2, p {
+  cursor: default;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -29,7 +33,7 @@ form input, select, textarea {
 
 .button-cancel {
   width: 29.25%;
-  background-color: lightgray;
+  background-color: var(--color-primary);
   color: #121212;
   transition: 0.5s;
 }

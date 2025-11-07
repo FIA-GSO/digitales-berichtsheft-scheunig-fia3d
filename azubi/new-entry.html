@@ -9,9 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
+  <div id="themeButtons">
   <button id="themeButton">
     <span class="material-symbols-outlined"></span>
   </button>
+    <button class="themeButton theme-pretty-pink">
+      <span class="material-symbols-outlined">favorite</span>
+    </button>
+    <button class="themeButton theme-black-gold">
+      <span class="material-symbols-outlined">diamond</span>
+    </button>
+    <button class="themeButton theme-orange-black">
+      <span class="material-symbols-outlined">18_up_rating</span>
+    </button>
+  </div>
   <h1>Neuer Berichtsheft-Eintrag</h1>
   <form id="new-entry-form">
     <select name="ausbildungsjahr" id="ausbildungsjahr" form="new-entry-form">
@@ -34,7 +45,7 @@
     <textarea name="schulichetaetigkeiten" id="schulichetaetigkeiten" rows="8"></textarea>
     <div class="buttons">
       <button type="submit" class="button-submit">Absenden</button>
-      <button class="button-cancel">Abbrechen</button>
+      <button type="button" class="button-cancel">Abbrechen</button>
     </div>
   </form>
 
