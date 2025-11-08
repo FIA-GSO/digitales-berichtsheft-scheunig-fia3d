@@ -66,6 +66,10 @@ body {
   display: none;
 }
 
+#themeButtons {
+  cursor: default;
+}
+
 #themeButton, .themeButton {
   background-color: var(--color-bg-button);
   color: var(--color-fg);
