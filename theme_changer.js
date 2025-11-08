@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       break;
     default:
       currentThemeSetting = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      mode = currentThemeSetting === 'dark' ? 'light' : 'dark';
+      mode = currentThemeSetting === 'dark' ? 'light_mode' : 'dark_mode';
       break;
   }
 

@@ -9,11 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
-  <button id="themeButton">
-    <span class="material-symbols-outlined">
-      light_mode
-    </span>
-  </button>
+  <div id="themeButtons">
+    <button id="themeButton">
+      <span class="material-symbols-outlined"></span>
+    </button>
+    <button class="themeButton theme-pretty-pink">
+      <span class="material-symbols-outlined">favorite</span>
+    </button>
+    <button class="themeButton theme-black-gold">
+      <span class="material-symbols-outlined">diamond</span>
+    </button>
+    <button class="themeButton theme-orange-black">
+      <span class="material-symbols-outlined">18_up_rating</span>
+    </button>
+  </div>
   <h1>Digitales Berichtsheft</h1>
   <form id='login-form' method='post'>
     <select name='role' id='role-select' required>
