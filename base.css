@@ -120,7 +120,7 @@ h1 {
   place-self: center;
 }
 
-button:not(#themeButton, .themeButton),
+button:not(.themeButton),
 input,
 select {
   border-radius: .25rem;
@@ -129,10 +129,10 @@ select {
 }
 
 button {
-  border: none;
   cursor: pointer;
-  /* background-color: var(--color-bg-button); */
+  background-color: var(--color-bg-button);
   color: var(--color-fg-button);
+  border: 1px solid var(--color-bg-form-element);
 }
 
 input,
@@ -140,7 +140,7 @@ select,
 textarea {
   background-color: var(--color-bg);
   color: var(--color-fg);
-  border: var(--color-bg-form-element) 0.125rem solid;
+  border: 0.125rem solid var(--color-bg-form-element);
   border-radius: .25rem;
   padding: .5rem 1rem;
 
@@ -149,7 +149,8 @@ textarea {
 
 input:hover,
 select:hover,
-textarea:hover {
+textarea:hover,
+button:hover {
   border-color: var(--color-fg-form-element);
 }
 
