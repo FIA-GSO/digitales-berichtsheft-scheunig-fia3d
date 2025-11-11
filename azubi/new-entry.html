@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html data-theme="dark">
 <head>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Neuer Berichtsheft-Eintrag</title>
-  <link rel='stylesheet' href='/base.css'>
-  <link rel='stylesheet' href='./new-entry.css'>
+  <link rel="stylesheet" href="/base.css">
+  <link rel="stylesheet" href="./new-entry.css">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
@@ -25,30 +25,25 @@
   </div>
   <h1>Neuer Berichtsheft-Eintrag</h1>
   <form id="new-entry-form">
-    <select name="ausbildungsjahr" id="ausbildungsjahr" form="new-entry-form" required>
-      <option value="" disabled selected>Ausbildungsjahr</option>
-      <option value="1">Erstes Ausbildungsjahr</option>
-      <option value="2">Zweites Ausbildungsjahr</option>
-      <option value="3">Drittes Ausbildungsjahr</option>
-    </select>
-    <input type="date" name="ausbildungswoche" id="ausbildungswoche" required />
-    <select name="abteilung" id="abteilung" form="new-entry-form" required>
-      <option value="" disabled selected>Abteilung</option>
-      <option value="purchasing">Einkauf</option>
-      <option value="sales">Verkauf</option>
-      <option value="frontend">Frontend</option>
-      <option value="backend">Backend</option>
-    </select>
-    <p>Meine betrieblichen Tätigkeiten:</p>
-    <textarea name="betrieblichetaetigkeiten" id="betrieblichetaetigkeiten" rows="8" required></textarea>
-    <p>Meine schulischen Tätigkeiten:</p>
-    <textarea name="schulischetaetigkeiten" id="schulichetaetigkeiten" rows="8" required></textarea>
-    <div class="buttons">
+    <label for="ausbildungsjahr">Ausbildungsjahr:</label>
+    <input id="ausbildungsjahr" type="number" min="1" max="9" required />
+    <input id="ausbildungswoche" type="date" required />
+
+    <label for="abteilung">Abteilung:</label>
+    <input id="abteilung" type="text" maxlength="50" required />
+
+    <label for="betrieblichetaetigkeiten">Meine betrieblichen Tätigkeiten:</label>
+    <textarea id="betrieblichetaetigkeiten" rows="8" required></textarea>
+
+    <label for="schulischetaetigkeiten">Meine schulischen Tätigkeiten:</label>
+    <textarea name="schulischetaetigkeiten" id="schulichetaetigkeiten" rows="8"></textarea>
+
+    <div id="form-buttons">
       <button type="submit" class="button-submit">Absenden</button>
-      <button type="button" class="button-cancel">Abbrechen</button>
+      <button type="reset" class="button-cancel">Abbrechen</button>
     </div>
   </form>
 
-  <script src='/theme_changer.js'></script>
+  <script src="/theme_changer.js"></script>
 </body>
 </html>

@@ -1,34 +1,31 @@
-h1, h2, p, .buttons {
+h1, #form-buttons, label {
   width: 50%;
   margin: 0 auto;
 }
 
-h1, h2 {
+h1 {
   padding-bottom: 1rem;
   text-align: center;
-}
-
-h1, h2, p {
   cursor: default;
 }
 
 form {
   display: flex;
   flex-direction: column;
-}
 
-form input, select, textarea {
-  width: 50%;
-  margin: 0.5rem auto;
+  & > input, > textarea {
+    width: 50%;
+    margin: 0.5rem auto;
+  }
 }
 
 .button-submit {
   width: 70%;
   transition: 0.5s;
-}
 
-.button-submit:hover {
-  background-color: #1F1F1F;
+  &:hover {
+    background-color: #1F1F1F;
+  }
 }
 
 .button-cancel {
@@ -36,8 +33,8 @@ form input, select, textarea {
   background-color: var(--color-primary);
   color: var(--color-fg-button);
   transition: 0.5s;
-}
 
-.button-cancel:hover {
-  background-color: #b2b2b2;
+  &:hover {
+    background-color: #b2b2b2;
+  }
 }
