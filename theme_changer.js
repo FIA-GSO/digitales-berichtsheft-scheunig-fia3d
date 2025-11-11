@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   const
     themeButtonsContainer = document.querySelector('#themeButtons'),
-    /** @type {NodeListOf<HTMLButtonElement>} */ themeButtons = themeButtonsContainer.querySelectorAll('.themeButton'),
-    themeButton = document.querySelector('#themeButton'),
+    /** @type {HTMLButtonElement} */ themeButton = themeButtonsContainer.firstElementChild,
+    /** @type {NodeListOf<HTMLButtonElement>} */ themeButtons = themeButtonsContainer.querySelectorAll('.themeButton:not(:first-child)'),
     themeButtonSpan = themeButton.querySelector('span'),
-    prettyPinkButton = document.querySelector('.theme-pretty-pink'),
-    blackGoldButton = document.querySelector('.theme-black-gold'),
-    orangeBlackButton = document.querySelector('.theme-orange-black');
+    prettyPinkButton = themeButtonsContainer.querySelector('.theme-pretty-pink'),
+    blackGoldButton = themeButtonsContainer.querySelector('.theme-black-gold'),
+    orangeBlackButton = themeButtonsContainer.querySelector('.theme-orange-black');
 
   let
     currentThemeSetting = localStorage.getItem('theme'),
