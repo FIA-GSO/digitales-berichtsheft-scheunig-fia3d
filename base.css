@@ -5,61 +5,63 @@
   color-scheme: light dark;
 }
 
+html {
+  &[data-theme="light"] {
+    --color-bg: #f1f1f1;
+    --color-fg: #121212;
+    --color-bg-button: #f1f1f1;
+    --color-fg-button: #121212;
+    --color-bg-form-element: lightgray;
+    --color-fg-form-element: #121212;
+    --color-primary: lightgray;
+  }
+
+  &[data-theme="dark"] {
+    --color-bg: #121212;
+    --color-fg: #f1f1f1;
+    --color-bg-button: #121212;
+    --color-fg-button: #f1f1f1;
+    --color-bg-form-element: #1f1f1f;
+    --color-fg-form-element: lightgray;
+    --color-primary: #1f1f1f;
+  }
+
+  &[data-theme="pretty-pink"] {
+    --color-bg: #121212;
+    --color-fg: pink;
+    --color-bg-button: #121212;
+    --color-fg-button: pink;
+    --color-bg-form-element: #1f1f1f;
+    --color-fg-form-element: pink;
+    --color-primary: pink;
+  }
+
+  &[data-theme="black-gold"] {
+    --color-bg: black;
+    --color-fg: gold;
+    --color-bg-button: black;
+    --color-fg-button: gold;
+    --color-bg-form-element: #1f1f1f;
+    --color-fg-form-element: gold;
+    --color-primary: gold;
+  }
+
+  &[data-theme="orange-black"] {
+    --color-bg: black;
+    --color-fg: #ff9000;
+    --color-bg-button: black;
+    --color-fg-button: #ff9000;
+    --color-bg-form-element: #1f1f1f;
+    --color-fg-form-element: #ff9000;
+    --color-primary: #ff9000;
+  }
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-fg);
 
   transition: 0.5s;
-}
-
-[data-theme="light"] {
-  --color-bg: #f1f1f1;
-  --color-fg: #121212;
-  --color-bg-button: #f1f1f1;
-  --color-fg-button: #121212;
-  --color-bg-form-element: lightgray;
-  --color-fg-form-element: #121212;
-  --color-primary: lightgray;
-}
-
-[data-theme="dark"] {
-  --color-bg: #121212;
-  --color-fg: #f1f1f1;
-  --color-bg-button: #121212;
-  --color-fg-button: #f1f1f1;
-  --color-bg-form-element: #1f1f1f;
-  --color-fg-form-element: lightgray;
-  --color-primary: #1f1f1f;
-}
-
-[data-theme="pretty-pink"] {
-  --color-bg: #121212;
-  --color-fg: pink;
-  --color-bg-button: #121212;
-  --color-fg-button: #121212;
-  --color-bg-form-element: #1f1f1f;
-  --color-fg-form-element: pink;
-  --color-primary: pink;
-}
-
-[data-theme="black-gold"] {
-  --color-bg: black;
-  --color-fg: gold;
-  --color-bg-button: black;
-  --color-fg-button: #121212;
-  --color-bg-form-element: #1f1f1f;
-  --color-fg-form-element: gold;
-  --color-primary: gold;
-}
-
-[data-theme="orange-black"] {
-  --color-bg: black;
-  --color-fg: #ff9000;
-  --color-bg-button: black;
-  --color-fg-button: #121212;
-  --color-bg-form-element: #1f1f1f;
-  --color-fg-form-element: #ff9000;
-  --color-primary: #ff9000;
 }
 
 .hidden {
@@ -68,56 +70,58 @@ body {
 
 #themeButtons {
   cursor: default;
-}
 
-#themeButton, .themeButton {
-  background-color: var(--color-bg-button);
-  color: var(--color-fg);
-  border: .125rem solid var(--color-fg);
-  border-radius: 100%;
-  height: 36px;
-  width: 36px;
-  cursor: default;
+  & > .themeButton {
+    background-color: var(--color-bg-button);
+    color: var(--color-fg);
+    border: .125rem solid var(--color-fg);
+    border-radius: 100%;
+    height: 36px;
+    width: 36px;
+    cursor: default;
 
-  transition: 0.5s;
-}
+    transition: 0.5s;
 
-#themeButton:hover {
-  box-shadow: inset 0 0 0 2em var(--color-fg);
-}
+    &:first-of-type:hover {
+      box-shadow: inset 0 0 0 2em var(--color-fg);
+    }
 
-.theme-pretty-pink {
-  visibility: hidden;
-}
+    &.theme-pretty-pink {
+      visibility: hidden;
 
-.theme-pretty-pink:hover {
-  color: pink;
-  border-color: pink;
-  box-shadow: inset 0 0 0 2em pink;
-}
+      &:hover {
+        color: pink;
+        border-color: pink;
+        box-shadow: inset 0 0 0 2em pink;
+      }
+    }
 
-.theme-black-gold {
-  visibility: hidden;
-}
 
-.theme-black-gold:hover {
-  color: gold;
-  border-color: gold;
-  box-shadow: inset 0 0 0 2em gold;
-}
+    .theme-black-gold {
+      visibility: hidden;
 
-.theme-orange-black {
-  visibility: hidden;
-}
+      &:hover {
+        color: gold;
+        border-color: gold;
+        box-shadow: inset 0 0 0 2em gold;
+      }
+    }
 
-.theme-orange-black:hover {
-  color: #ff9000;
-  border-color: #ff9000;
-  box-shadow: inset 0 0 0 2em #ff9000;
-}
 
-#themeButton > span, .themeButton > span {
-  line-height: unset;
+    .theme-orange-black {
+      visibility: hidden;
+
+      &:hover {
+        color: #ff9000;
+        border-color: #ff9000;
+        box-shadow: inset 0 0 0 2em #ff9000;
+      }
+    }
+  }
+
+  & > span {
+    line-height: unset;
+  }
 }
 
 * {
@@ -139,9 +143,13 @@ select {
 button {
   border: none;
   cursor: pointer;
+  /* background-color: var(--color-bg-button); */
+  color: var(--color-fg-button);
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   background-color: var(--color-bg);
   color: var(--color-fg);
   border: var(--color-bg-form-element) 0.125rem solid;
@@ -151,7 +159,9 @@ input, select, textarea {
   transition: 0.5s;
 }
 
-input:hover, select:hover, textarea:hover {
+input:hover,
+select:hover,
+textarea:hover {
   border-color: var(--color-fg-form-element);
 }
 
