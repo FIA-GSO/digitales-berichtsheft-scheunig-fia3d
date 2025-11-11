@@ -25,14 +25,14 @@
   </div>
   <h1>Neuer Berichtsheft-Eintrag</h1>
   <form id="new-entry-form">
-    <select name="ausbildungsjahr" id="ausbildungsjahr" form="new-entry-form">
+    <select name="ausbildungsjahr" id="ausbildungsjahr" form="new-entry-form" required>
       <option value="" disabled selected>Ausbildungsjahr</option>
       <option value="1">Erstes Ausbildungsjahr</option>
       <option value="2">Zweites Ausbildungsjahr</option>
       <option value="3">Drittes Ausbildungsjahr</option>
     </select>
-    <input type="date" name="ausbildungswoche" id="ausbildungswoche" />
-    <select name="abteilung" id="abteilung" form="new-entry-form">
+    <input type="date" name="ausbildungswoche" id="ausbildungswoche" required />
+    <select name="abteilung" id="abteilung" form="new-entry-form" required>
       <option value="" disabled selected>Abteilung</option>
       <option value="purchasing">Einkauf</option>
       <option value="sales">Verkauf</option>
@@ -40,9 +40,9 @@
       <option value="backend">Backend</option>
     </select>
     <p>Meine betrieblichen Tätigkeiten:</p>
-    <textarea name="betrieblichetaetigkeiten" id="betrieblichetaetigkeiten" rows="8"></textarea>
+    <textarea name="betrieblichetaetigkeiten" id="betrieblichetaetigkeiten" rows="8" required></textarea>
     <p>Meine schulischen Tätigkeiten:</p>
-    <textarea name="schulischetaetigkeiten" id="schulichetaetigkeiten" rows="8"></textarea>
+    <textarea name="schulischetaetigkeiten" id="schulichetaetigkeiten" rows="8" required></textarea>
     <div class="buttons">
       <button type="submit" class="button-submit">Absenden</button>
       <button type="button" class="button-cancel">Abbrechen</button>
