@@ -3,6 +3,10 @@ body {
   flex-direction: column;
 }
 
+h1 {
+  place-self: center;
+}
+
 form#login-form {
   display: flex;
   flex-direction: column;

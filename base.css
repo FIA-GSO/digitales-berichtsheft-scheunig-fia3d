@@ -122,10 +122,6 @@ body {
   box-sizing: border-box;
 }
 
-h1 {
-  place-self: center;
-}
-
 button:not(.themeButton),
 input,
 select {
