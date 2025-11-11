@@ -82,6 +82,7 @@ body {
     height: 36px;
     width: 36px;
     transition: 0.5s;
+    margin-bottom: .25rem;
     
     &:not(:first-of-type) {
       visibility: hidden;
