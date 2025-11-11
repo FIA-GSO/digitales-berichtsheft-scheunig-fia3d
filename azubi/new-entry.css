@@ -1,9 +1,6 @@
-h1, #form-buttons, label {
+h1 {
   width: 50%;
   margin: 0 auto;
-}
-
-h1 {
   padding-bottom: 1rem;
   text-align: center;
   cursor: default;
@@ -13,7 +10,7 @@ form {
   display: flex;
   flex-direction: column;
 
-  & > input, > textarea {
+  & > * {
     width: 50%;
     margin: 0.5rem auto;
   }
