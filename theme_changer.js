@@ -8,33 +8,29 @@ document.addEventListener('DOMContentLoaded', () => {
     blackGoldButton = themeButtonsContainer.querySelector('.theme-black-gold'),
     orangeBlackButton = themeButtonsContainer.querySelector('.theme-orange-black');
 
-  let
-    currentThemeSetting = localStorage.getItem('theme'),
-    mode;
+  let currentThemeSetting = localStorage.getItem('theme');
 
   switch (currentThemeSetting) {
     case 'dark':
-      mode = 'light_mode';
+      themeButtonSpan.textContent = 'light_mode';
       break;
     case 'light':
-      mode = 'dark_mode';
+      themeButtonSpan.textContent = 'dark_mode';
       break;
     case 'black-gold':
-      mode = 'diamond';
+      themeButtonSpan.textContent = 'diamond';
       break;
     case 'pretty-pink':
-      mode = 'favorite';
+      themeButtonSpan.textContent = 'favorite';
       break;
     case 'orange-black':
-      mode = '18_up_rating';
+      themeButtonSpan.textContent = '18_up_rating';
       break;
     default:
       currentThemeSetting = globalThis.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      mode = currentThemeSetting === 'dark' ? 'light_mode' : 'dark_mode';
+      themeButtonSpan.textContent = currentThemeSetting === 'dark' ? 'light_mode' : 'dark_mode';
       break;
   }
-
-  themeButtonSpan.textContent = mode;
 
   if (currentThemeSetting)
     document.documentElement.dataset.theme = currentThemeSetting;
