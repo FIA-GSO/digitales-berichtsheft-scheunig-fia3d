@@ -1,15 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   const
     themeButtonsContainer = document.querySelector('#themeButtons'),
-    themeButtons = themeButtonsContainer.querySelectorAll('.themeButton'),
+    /** @type {NodeListOf<HTMLButtonElement>} */ themeButtons = themeButtonsContainer.querySelectorAll('.themeButton'),
     themeButton = document.querySelector('#themeButton'),
-    themeButtonSpan = themeButton.querySelector('span');
-    prettyPinkButton = document.querySelector('.theme-pretty-pink');
-    blackGoldButton = document.querySelector('.theme-black-gold');
+    themeButtonSpan = themeButton.querySelector('span'),
+    prettyPinkButton = document.querySelector('.theme-pretty-pink'),
+    blackGoldButton = document.querySelector('.theme-black-gold'),
     orangeBlackButton = document.querySelector('.theme-orange-black');
 
-  let currentThemeSetting = localStorage.getItem('theme');
-  let mode = '';
+  let
+    currentThemeSetting = localStorage.getItem('theme'),
+    mode;
 
   switch (currentThemeSetting) {
     case 'dark':
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mode = '18_up_rating';
       break;
     default:
-      currentThemeSetting = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      currentThemeSetting = globalThis.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       mode = currentThemeSetting === 'dark' ? 'light_mode' : 'dark_mode';
       break;
   }
@@ -46,36 +47,33 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', newTheme);
     currentThemeSetting = newTheme;
 
-    let notCurrentThemeSetting = currentThemeSetting === 'dark' ? 'light' : 'dark';
+    const notCurrentThemeSetting = currentThemeSetting === 'dark' ? 'light' : 'dark';
     themeButtonSpan.textContent = `${notCurrentThemeSetting}_mode`;
   });
 
-  themeButton.addEventListener('mouseenter', () => {
-    themeButtons.forEach(button => {
-      button.style.visibility = 'visible';
-    });
-    themeButtonsContainer.addEventListener('mouseleave', () => {
-      themeButtons.forEach(button => {
-        button.style.visibility = 'hidden';
-      });
-    });
+  themeButtonsContainer.addEventListener('mouseleave', () => {
+    for (const button of themeButtons) button.style.visibility = 'hidden';
   });
+  themeButton.addEventListener('mouseenter', () => {
+    for (const button of themeButtons) button.style.visibility = 'visible';
+  });
+
   blackGoldButton.addEventListener('click', () => {
     document.documentElement.dataset.theme = 'black-gold';
     localStorage.setItem('theme', 'black-gold');
     currentThemeSetting = 'black-gold';
-    themeButtonSpan.textContent = `diamond`;
+    themeButtonSpan.textContent = 'diamond';
   });
   orangeBlackButton.addEventListener('click', () => {
     document.documentElement.dataset.theme = 'orange-black';
     localStorage.setItem('theme', 'orange-black');
     currentThemeSetting = 'orange-black';
-    themeButtonSpan.textContent = `18_up_rating`;
+    themeButtonSpan.textContent = '18_up_rating';
   });
   prettyPinkButton.addEventListener('click', () => {
     document.documentElement.dataset.theme = 'pretty-pink';
     localStorage.setItem('theme', 'pretty-pink');
     currentThemeSetting = 'pretty-pink';
-    themeButtonSpan.textContent = `favorite`;
+    themeButtonSpan.textContent = 'favorite';
   });
 });
