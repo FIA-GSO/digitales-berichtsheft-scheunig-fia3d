@@ -74,6 +74,9 @@ body {
   & > .themeButton {
     background-color: var(--color-bg-button);
     color: var(--color-fg);
+    display: flex;
+    place-items: center;
+    place-content: center;
     border: .125rem solid var(--color-fg);
     border-radius: 100%;
     height: 36px;
