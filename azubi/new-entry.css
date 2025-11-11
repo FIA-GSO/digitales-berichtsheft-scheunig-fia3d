@@ -19,10 +19,6 @@ form {
 .button-submit {
   width: 70%;
   transition: 0.5s;
-
-  &:hover {
-    background-color: #1F1F1F;
-  }
 }
 
 .button-cancel {

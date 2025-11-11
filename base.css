@@ -71,6 +71,7 @@ body {
 #themeButtons {
   cursor: default;
   position: absolute;
+  right: 0.5rem;
 
   & > .themeButton {
     background-color: var(--color-bg-button);
