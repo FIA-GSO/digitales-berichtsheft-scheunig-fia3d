@@ -25,12 +25,20 @@
   </div>
   <h1>Neuer Berichtsheft-Eintrag</h1>
   <form id="new-entry-form">
-    <label for="ausbildungsjahr">Ausbildungsjahr:</label>
-    <input id="ausbildungsjahr" type="number" min="1" max="9" required />
-    <input id="ausbildungswoche" type="date" required />
+    <div class="input-container">
+      <label for="ausbildungsjahr">Ausbildungsjahr:</label>
+      <input id="ausbildungsjahr" type="number" min="1" max="9" required />
+    </div>
 
-    <label for="abteilung">Abteilung:</label>
-    <input id="abteilung" type="text" maxlength="50" required />
+    <div class="input-container">
+      <label for="ausbildungswoche">Ausbildungswoche:</label>
+      <input id="ausbildungswoche" type="date" required />
+    </div>
+
+    <div class="input-container">
+      <label for="abteilung">Abteilung:</label>
+      <input id="abteilung" type="text" maxlength="50" required />
+    </div>
 
     <label for="betrieblichetaetigkeiten">Meine betrieblichen Tätigkeiten:</label>
     <textarea id="betrieblichetaetigkeiten" rows="8" required></textarea>

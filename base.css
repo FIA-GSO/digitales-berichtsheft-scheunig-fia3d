@@ -157,3 +157,18 @@ button:hover {
 table {
   border-collapse: collapse;
 }
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-container label {
+  white-space: nowrap;
+}
+
+.input-container input {
+  flex: 1;
+  min-width: 0;
+}
