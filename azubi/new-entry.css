@@ -1,3 +1,8 @@
+html {
+  --button-cancel-bg: #b2b2b2;
+  --button-cancel-fg: #121212;
+}
+
 h1 {
   width: 50%;
   margin: 0 auto;
@@ -23,11 +28,7 @@ form {
 
 .button-cancel {
   width: 29.25%;
-  background-color: var(--color-fg-button);
-  color: var(--color-bg-button);
+  background-color: var(--button-cancel-bg);
+  color: var(--button-cancel-fg);
   transition: 0.5s;
-}
-
-.button-cancel:hover {
-  border-color: var(--color-fg-button)
 }
