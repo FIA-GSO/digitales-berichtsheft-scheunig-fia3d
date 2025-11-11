@@ -23,11 +23,11 @@ form {
 
 .button-cancel {
   width: 29.25%;
-  background-color: var(--color-primary);
-  color: var(--color-fg-button);
+  background-color: var(--color-fg-button);
+  color: var(--color-bg-button);
   transition: 0.5s;
+}
 
-  &:hover {
-    background-color: #b2b2b2;
-  }
+.button-cancel:hover {
+  border-color: var(--color-fg-button)
 }
