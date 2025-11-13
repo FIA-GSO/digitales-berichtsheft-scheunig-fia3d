@@ -1,60 +1,12 @@
+@import "variables.css";
+@import "navbar.css";
+@import "themebutton.css";
+
 :root {
   font-family: sans-serif;
   font-size: 1rem;
 
   color-scheme: light dark;
-}
-
-html {
-  &[data-theme="light"] {
-    --color-bg: #f1f1f1;
-    --color-fg: #121212;
-    --color-bg-button: #f1f1f1;
-    --color-fg-button: #121212;
-    --color-bg-form-element: lightgray;
-    --color-fg-form-element: #121212;
-    --color-primary: lightgray;
-  }
-
-  &[data-theme="dark"] {
-    --color-bg: #121212;
-    --color-fg: #f1f1f1;
-    --color-bg-button: #121212;
-    --color-fg-button: #f1f1f1;
-    --color-bg-form-element: #1f1f1f;
-    --color-fg-form-element: lightgray;
-    --color-primary: #1f1f1f;
-  }
-
-  &[data-theme="pretty-pink"] {
-    --color-bg: #121212;
-    --color-fg: pink;
-    --color-bg-button: #121212;
-    --color-fg-button: pink;
-    --color-bg-form-element: #1f1f1f;
-    --color-fg-form-element: pink;
-    --color-primary: pink;
-  }
-
-  &[data-theme="black-gold"] {
-    --color-bg: black;
-    --color-fg: gold;
-    --color-bg-button: black;
-    --color-fg-button: gold;
-    --color-bg-form-element: #1f1f1f;
-    --color-fg-form-element: gold;
-    --color-primary: gold;
-  }
-
-  &[data-theme="orange-black"] {
-    --color-bg: black;
-    --color-fg: #ff9000;
-    --color-bg-button: black;
-    --color-fg-button: #ff9000;
-    --color-bg-form-element: #1f1f1f;
-    --color-fg-form-element: #ff9000;
-    --color-primary: #ff9000;
-  }
 }
 
 body {
@@ -65,62 +17,16 @@ body {
   transition: 0.5s;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .hidden {
   display: none;
 }
 
-#themeButtons {
-  cursor: default;
-  position: absolute;
-  right: 0.5rem;
-
-  & > .themeButton {
-    background-color: var(--color-bg-button);
-    color: var(--color-fg);
-    display: flex;
-    place-items: center;
-    place-content: center;
-    border: .125rem solid var(--color-fg);
-    border-radius: 100%;
-    height: 36px;
-    width: 36px;
-    transition: 0.5s;
-    margin-bottom: .25rem;
-    
-    &:not(:first-of-type) {
-      visibility: hidden;
-    }
-
-    &:first-of-type:hover {
-      box-shadow: inset 0 0 0 2em var(--color-fg);
-    }
-
-    &.theme-pretty-pink:hover {
-      color: pink;
-      border-color: pink;
-      box-shadow: inset 0 0 0 2em pink;
-    }
-
-    &.theme-black-gold:hover {
-      color: gold;
-      border-color: gold;
-      box-shadow: inset 0 0 0 2em gold;
-    }
-
-    &.theme-orange-black:hover {
-      color: #ff9000;
-      border-color: #ff9000;
-      box-shadow: inset 0 0 0 2em #ff9000;
-    }
-
-    & > span {
-      line-height: unset;
-    }
-  }
-}
-
-* {
-  box-sizing: border-box;
+a, a:visited {
+  color: var(--color-hyperlink);
 }
 
 button:not(.themeButton),
@@ -136,6 +42,11 @@ button {
   background-color: var(--color-bg-button);
   color: var(--color-fg-button);
   border: 1px solid var(--color-bg-form-element);
+  transition: 0.5s;
+}
+
+table {
+  border-collapse: collapse;
 }
 
 input,
@@ -157,98 +68,24 @@ button:hover {
   border-color: var(--color-fg-form-element);
 }
 
-table {
-  border-collapse: collapse;
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }
 
 .input-container {
   display: flex;
   align-items: center;
   gap: 10px;
-}
 
-.input-container label {
-  white-space: nowrap;
-}
+  label {
+    white-space: nowrap;
+  }
 
-.input-container input {
-  flex: 1;
-  min-width: 0;
-}
-
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-}
-
-/* Navbar styling */
-
-.navbar {
-  background: #333;
-  padding: 0;
-  margin: 0 0 1rem;
-  list-style: none;
-  display: flex;
-}
-
-.nav-item {
-  position: relative;
-}
-
-.nav-item > a {
-  display: block;
-  color: white;
-  padding: 15px 20px;
-  text-decoration: none;
-  height: 100%;
-  align-content: center;
-}
-
-.nav-item > a:hover {
-  background: #555;
-}
-
-.nav-item.has-dropdown > a::after {
-  content: " ▾";
-}
-
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: none;
-  border: 1px solid #ccc;
-}
-
-.dropdown li {
-  border-bottom: 1px solid #eee;
-}
-
-.dropdown li:last-child {
-  border-bottom: none;
-}
-
-.dropdown a {
-  display: block;
-  padding: 10px 15px;
-  color: #333;
-  text-decoration: none;
-}
-
-.dropdown a:hover {
-  background: #f5f5f5;
-}
-
-.nav-item:hover .dropdown {
-  display: block;
-}
-
-.active {
-  background-color: #2b2b2b;
+  input {
+    flex: 1;
+    min-width: 0;
+  }
 }

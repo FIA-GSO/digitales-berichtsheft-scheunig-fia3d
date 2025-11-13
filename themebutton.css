@@ -1,0 +1,52 @@
+#themeButtons {
+  display: flex;
+  flex-direction: row-reverse;
+  cursor: default;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+
+  & > .themeButton {
+    background-color: var(--color-bg-button);
+    color: var(--color-fg);
+    display: flex;
+    place-items: center;
+    place-content: center;
+    border: .125rem solid var(--color-fg);
+    border-radius: 100%;
+    height: 36px;
+    width: 36px;
+    transition: 0.5s;
+    margin-left: .25rem;
+    
+    &:not(:first-of-type) {
+      visibility: hidden;
+    }
+
+    &:first-of-type:hover {
+      box-shadow: inset 0 0 0 2em var(--color-fg);
+    }
+
+    &.theme-pretty-pink:hover {
+      color: pink;
+      border-color: pink;
+      box-shadow: inset 0 0 0 2em pink;
+    }
+
+    &.theme-black-gold:hover {
+      color: gold;
+      border-color: gold;
+      box-shadow: inset 0 0 0 2em gold;
+    }
+
+    &.theme-orange-black:hover {
+      color: #ff9000;
+      border-color: #ff9000;
+      box-shadow: inset 0 0 0 2em #ff9000;
+    }
+
+    & > span {
+      line-height: unset;
+    }
+  }
+}
