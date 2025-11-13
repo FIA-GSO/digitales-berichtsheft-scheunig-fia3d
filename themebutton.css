@@ -2,9 +2,11 @@
   display: flex;
   flex-direction: row-reverse;
   cursor: default;
-  position: absolute;
+  position: fixed;
   top: 0.5rem;
   right: 0.5rem;
+
+  z-index: 10000;
 
   & > .themeButton {
     background-color: var(--color-bg-button);
