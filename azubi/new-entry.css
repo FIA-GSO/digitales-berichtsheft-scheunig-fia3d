@@ -23,12 +23,10 @@ form {
 
 .button-submit {
   width: 70%;
-  transition: 0.5s;
 }
 
 .button-cancel {
   width: 29.25%;
   background-color: var(--button-cancel-bg);
   color: var(--button-cancel-fg);
-  transition: 0.5s;
 }
