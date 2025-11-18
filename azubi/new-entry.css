@@ -21,12 +21,16 @@ form {
   }
 }
 
+#form-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
 .button-submit {
-  width: 70%;
+  flex: 1;
 }
 
 .button-cancel {
-  width: 29.25%;
   background-color: var(--button-cancel-bg);
   color: var(--button-cancel-fg);
 }
