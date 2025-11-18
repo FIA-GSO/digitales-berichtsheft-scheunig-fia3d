@@ -9,6 +9,7 @@
   margin: 0 0 1rem;
   list-style: none;
   display: flex;
+  justify-content: flex-start;
 
   transition: 0.5s;
 
