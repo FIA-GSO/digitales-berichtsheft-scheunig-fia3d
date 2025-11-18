@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const buttonCancel = document.querySelector('.button-cancel');
-    buttonCancel.addEventListener('click', () => {
-        window.location.replace('/azubi');
-    });
+  const buttonCancel = document.querySelector('.button-cancel');
+  buttonCancel.addEventListener('click', () => {
+    globalThis.location.replace('/azubi');
+  });
 });

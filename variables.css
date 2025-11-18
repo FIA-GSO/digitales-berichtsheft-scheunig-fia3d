@@ -13,29 +13,29 @@ html {
   --color-fg-form-element: var(--color-primary);
   --color-hyperlink: var(--color-primary);
 
-  &[data-theme="light"] {
+  &[data-theme='light'] {
     --color-primary: rgb(18, 18, 18);
     --color-secondary: rgb(241, 241, 241);
     --color-navbar-item-hover: #fff;
     --color-bg-form-element: lightgray;
   }
 
-  &[data-theme="dark"] {
+  &[data-theme='dark'] {
     --color-primary: rgb(241, 241, 241);
     --color-secondary: rgb(18, 18, 18);
   }
 
-  &[data-theme="pretty-pink"] {
+  &[data-theme='pretty-pink'] {
     --color-primary: rgb(255, 192, 203);
     --color-secondary: rgb(18, 18, 18);
   }
 
-  &[data-theme="black-gold"] {
+  &[data-theme='black-gold'] {
     --color-primary: rgb(255, 215, 0);
     --color-secondary: rgb(18, 18, 18);
   }
 
-  &[data-theme="orange-black"] {
+  &[data-theme='orange-black'] {
     --color-primary: rgb(255, 144, 0);
     --color-secondary: rgb(18, 18, 18);
   }

@@ -1,6 +1,6 @@
-@import "variables.css";
-@import "navbar.css";
-@import "themebutton.css";
+@import 'variables.css';
+@import 'navbar.css';
+@import 'themebutton.css';
 
 :root {
   font-family: sans-serif;
