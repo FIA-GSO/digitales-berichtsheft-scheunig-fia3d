@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html data-theme='dark'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Digitales Berichtsheft</title>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB' crossorigin='anonymous'>
+  <link rel='stylesheet' href='/base.css'>
+  <link rel='stylesheet' href='./index.css'>
+  <link href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined' rel='stylesheet' />
+</head>
+<body>
+  <ul class='navbar'>
+    <li class='nav-item material-symbols-outlined active'><a href='/'>home</a></li>
+    <li class='nav-item has-dropdown'>
+      <a href='/azubi'>Auszubildender</a>
+      <ul class='dropdown'>
+        <li><a href='/azubi/new-entry.html'>Neuer Berichtsheft-Eintrag</a></li>
+      </ul>
+    </li>
+    <li class='nav-item'>
+      <a href='/ausbilder'>Ausbilder</a>
+    </li>
+  </ul>
+  <div id='themeButtons'>
+    <button class='themeButton'>
+      <span class='material-symbols-outlined'></span>
+    </button>
+    <button class='themeButton theme-pretty-pink'>
+      <span class='material-symbols-outlined'>favorite</span>
+    </button>
+    <button class='themeButton theme-black-gold'>
+      <span class='material-symbols-outlined'>diamond</span>
+    </button>
+    <button class='themeButton theme-orange-black'>
+      <span class='material-symbols-outlined'>18_up_rating</span>
+    </button>
+  </div>
+  <h1>Digitales Berichtsheft</h1>
+  <form id='login-form' method='post'>
+    <select name='role' id='role-select' required>
+      <option value=''>Rolle wählen</option>
+      <option value='azubi'>Auszubildende:r</option>
+      <option value='ausbilder'>Ausbilde:r</option>
+      <option value='lehrer'>Lehrer:in</option>
+    </select>
+    <div class='form-entry'>
+      <label for='mail-input'>E-Mail</label>
+      <input type='email' id='email-input' placeholder='E-Mail eintragen' required/>
+    </div>
+    <div class='form-entry'>
+      <label for='password-input'>Password</label>
+      <input type='password' id='password-input' placeholder='Passwort eintragen' required/>
+    </div>
+    <div id='buttons'>
+      <button id='login-button' action='./login'>Login</button>
+      <button id='register-button' action='./register'>Registrieren</button>
+      <button id='password-reset' action='./password-reset'>Passwort vergessen?</button>
+    </div>
+  </form>
+  <script src='./index.js'></script>
+  <script src='/theme_changer.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js' integrity='sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI' crossorigin='anonymous'></script>
+</body>
+</html>
