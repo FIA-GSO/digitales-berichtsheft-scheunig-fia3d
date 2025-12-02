@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const themes = new Map([
+    ['dark', 'light_mode'],
+    ['light', 'dark_mode'],
+    ['black-gold', 'diamond'],
+    ['pretty-pink', 'favorite'],
+    ['orange-black', '18_up_rating'],
+  ]);
+
   const
     themeButtonsContainer = document.querySelector('#themeButtons'),
     /** @type {HTMLButtonElement} */ themeButton = themeButtonsContainer.firstElementChild,
@@ -10,26 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentThemeSetting = localStorage.getItem('theme');
 
-  switch (currentThemeSetting) {
-    case 'dark':
-      themeButtonSpan.textContent = 'light_mode';
-      break;
-    case 'light':
-      themeButtonSpan.textContent = 'dark_mode';
-      break;
-    case 'black-gold':
-      themeButtonSpan.textContent = 'diamond';
-      break;
-    case 'pretty-pink':
-      themeButtonSpan.textContent = 'favorite';
-      break;
-    case 'orange-black':
-      themeButtonSpan.textContent = '18_up_rating';
-      break;
-    default:
-      currentThemeSetting = globalThis.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      themeButtonSpan.textContent = currentThemeSetting === 'dark' ? 'light_mode' : 'dark_mode';
-      break;
+  if (themes.has(currentThemeSetting)) {
+    themeButtonSpan.textContent = themes.get(currentThemeSetting);
+  } else {
+    currentThemeSetting = globalThis.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    themeButtonSpan.textContent = currentThemeSetting === 'dark' ? 'light_mode' : 'dark_mode';
   }
 
   if (currentThemeSetting)
