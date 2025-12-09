@@ -25,6 +25,10 @@ body {
   display: none;
 }
 
+.visible {
+  visibility: visible;
+}
+
 a, a:visited {
   color: var(--color-hyperlink);
 }

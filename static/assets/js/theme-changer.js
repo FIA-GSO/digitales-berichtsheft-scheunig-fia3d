@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleTheme(currentThemeSetting);
 
   themeButton.addEventListener('mouseenter', () => {
-    for (const button of themeButtons) button.style.visibility = 'visible';
+    for (const button of themeButtons) button.classList.toggle('visible');
   });
   themeButtonsContainer.addEventListener('mouseleave', () => {
-    for (const button of themeButtons) button.style.visibility = 'hidden';
+    for (const button of themeButtons) button.classList.toggle('visible');
   });
 
   themeButton.addEventListener('click', () => {
