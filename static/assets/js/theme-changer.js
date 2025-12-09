@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     themeButtonSpan.textContent = themes.get(selectedTheme);
   }
 
+  function toggleAllVisible(htmlnodelist) {
+    for (const htmlnode of htmlnodelist) htmlnode.classList.toggle('visible');
+  }
+
   const
     themeButtonsContainer = document.querySelector('#themeButtons'),
     themeButton = themeButtonsContainer.firstElementChild,
@@ -23,31 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentThemeSetting = localStorage.getItem('theme');
 
-  if (!themes.has(currentThemeSetting)) {
+  if (!themes.has(currentThemeSetting))
     currentThemeSetting = globalThis.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
+
   toggleTheme(currentThemeSetting);
 
-  themeButton.addEventListener('mouseenter', () => {
-    for (const button of themeButtons) button.classList.toggle('visible');
-  });
-  themeButtonsContainer.addEventListener('mouseleave', () => {
-    for (const button of themeButtons) button.classList.toggle('visible');
-  });
+  themeButton.addEventListener('mouseenter', () => toggleAllVisible(themeButtons));
+  themeButtonsContainer.addEventListener('mouseleave', () => toggleAllVisible(themeButtons));
 
-  themeButton.addEventListener('click', () => {
-    const selectedTheme = currentThemeSetting === 'dark' ? 'light' : 'dark';
-
-    toggleTheme(selectedTheme);
-  });
+  themeButton.addEventListener('click', () => toggleTheme(currentThemeSetting === 'dark' ? 'light' : 'dark'));
 
   themeButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const selectedTheme = button.className.split(' ').find((c) => c.startsWith('theme-')).replace('theme-', '');
 
-      if (selectedTheme && themes.has(selectedTheme)) {
-        toggleTheme(selectedTheme);
-      }
+      if (selectedTheme && themes.has(selectedTheme)) toggleTheme(selectedTheme);
     });
   });
 });
