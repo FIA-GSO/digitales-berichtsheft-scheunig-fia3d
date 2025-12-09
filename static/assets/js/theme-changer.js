@@ -12,18 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.dataset.theme = selectedTheme;
     localStorage.setItem('theme', selectedTheme);
     currentThemeSetting = selectedTheme;
-    themeButtonSpan.textContent = themes.get(selectedTheme);
+    themeButton.querySelector('span').textContent = themes.get(selectedTheme);
   }
 
-  function toggleAllVisible(htmlnodelist) {
-    for (const htmlnode of htmlnodelist) htmlnode.classList.toggle('visible');
+  function toggleAllVisible(htmlnodelist, remove) {
+    if (remove) for (const htmlnode of htmlnodelist) htmlnode.classList.remove('visible');
+    else for (const htmlnode of htmlnodelist) htmlnode.classList.add('visible');
   }
 
   const
     themeButtonsContainer = document.querySelector('#themeButtons'),
     themeButton = themeButtonsContainer.firstElementChild,
-    themeButtons = themeButtonsContainer.querySelectorAll('.themeButton:not(:first-child)'),
-    themeButtonSpan = themeButton.querySelector('span');
+    themeButtons = themeButtonsContainer.querySelectorAll('.themeButton:not(:first-child)');
 
   let currentThemeSetting = localStorage.getItem('theme');
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleTheme(currentThemeSetting);
 
   themeButton.addEventListener('mouseenter', () => toggleAllVisible(themeButtons));
-  themeButtonsContainer.addEventListener('mouseleave', () => toggleAllVisible(themeButtons));
+  themeButtonsContainer.addEventListener('mouseleave', () => toggleAllVisible(themeButtons, true));
 
   themeButton.addEventListener('click', () => toggleTheme(currentThemeSetting === 'dark' ? 'light' : 'dark'));
 
