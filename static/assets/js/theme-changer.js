@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     ['orange-black', '18_up_rating'],
   ]);
 
+  function toggleTheme(selectedTheme) {
+    document.documentElement.dataset.theme = selectedTheme;
+    localStorage.setItem('theme', selectedTheme);
+    currentThemeSetting = selectedTheme;
+    themeButtonSpan.textContent = themes.get(selectedTheme);
+  }
+
   const
     themeButtonsContainer = document.querySelector('#themeButtons'),
     /** @type {HTMLButtonElement} */ themeButton = themeButtonsContainer.firstElementChild,
@@ -33,12 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   themeButton.addEventListener('click', () => {
-    const newTheme = currentThemeSetting === 'dark' ? 'light' : 'dark';
+    const selectedTheme = currentThemeSetting === 'dark' ? 'light' : 'dark';
 
-    document.documentElement.dataset.theme = newTheme;
-    localStorage.setItem('theme', newTheme);
-    currentThemeSetting = newTheme;
-    themeButtonSpan.textContent = themes.get(newTheme);
+    toggleTheme(selectedTheme);
   });
 
   themeButtons.forEach((button) => {
@@ -48,10 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const selectedTheme = classes.find((c) => c.startsWith('theme-')).replace('theme-', '');
 
       if (selectedTheme && themes.has(selectedTheme)) {
-        document.documentElement.dataset.theme = selectedTheme;
-        localStorage.setItem('theme', selectedTheme);
-        currentThemeSetting = selectedTheme;
-        themeButtonSpan.textContent = themes.get(selectedTheme);
+        toggleTheme(selectedTheme);
       }
     });
   });
