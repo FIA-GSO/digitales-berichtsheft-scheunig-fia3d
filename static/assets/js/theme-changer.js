@@ -1,11 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Map([['theme', 'material symbols icon']])
   const themes = new Map([
-    ['dark', 'light_mode'],
-    ['light', 'dark_mode'],
-    ['black-gold', 'diamond'],
-    ['pretty-pink', 'favorite'],
-    ['orange-black', '18_up_rating'],
+    ['dark', 'light_mode'], ['light', 'dark_mode'],
+    ['black-gold', 'diamond'], ['pretty-pink', 'favorite'], ['orange-black', '18_up_rating']
   ]);
 
   function toggleTheme(selectedTheme) {
@@ -15,9 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     themeButton.querySelector('span').textContent = themes.get(selectedTheme);
   }
 
-  function toggleAllVisible(htmlnodelist, remove) {
-    if (remove) for (const htmlnode of htmlnodelist) htmlnode.classList.remove('visible');
-    else for (const htmlnode of htmlnodelist) htmlnode.classList.add('visible');
+  function toggleAllVisible(htmlnodelist, func) {
+    for (const htmlnode of htmlnodelist) htmlnode.classList[func]('visible');
   }
 
   const
@@ -32,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggleTheme(currentThemeSetting);
 
-  themeButton.addEventListener('mouseenter', () => toggleAllVisible(themeButtons));
-  themeButtonsContainer.addEventListener('mouseleave', () => toggleAllVisible(themeButtons, true));
+  themeButton.addEventListener('mouseenter', () => toggleAllVisible(themeButtons, 'add'));
+  themeButtonsContainer.addEventListener('mouseleave', () => toggleAllVisible(themeButtons, 'remove'));
 
   themeButton.addEventListener('click', () => toggleTheme(currentThemeSetting === 'dark' ? 'light' : 'dark'));
 
