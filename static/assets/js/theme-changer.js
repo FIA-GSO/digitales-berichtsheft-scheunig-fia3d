@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Map([['theme', 'material symbols icon']])
   const themes = new Map([
     ['dark', 'light_mode'],
     ['light', 'dark_mode'],
@@ -16,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const
     themeButtonsContainer = document.querySelector('#themeButtons'),
-    /** @type {HTMLButtonElement} */ themeButton = themeButtonsContainer.firstElementChild,
-    /** @type {NodeListOf<HTMLButtonElement>} */ themeButtons = themeButtonsContainer.querySelectorAll('.themeButton:not(:first-child)'),
+    themeButton = themeButtonsContainer.firstElementChild,
+    themeButtons = themeButtonsContainer.querySelectorAll('.themeButton:not(:first-child)'),
     themeButtonSpan = themeButton.querySelector('span');
 
   let currentThemeSetting = localStorage.getItem('theme');
