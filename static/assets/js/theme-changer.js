@@ -22,21 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentThemeSetting = localStorage.getItem('theme');
 
-  if (themes.has(currentThemeSetting)) {
-    themeButtonSpan.textContent = themes.get(currentThemeSetting);
-  } else {
+  if (!themes.has(currentThemeSetting)) {
     currentThemeSetting = globalThis.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    themeButtonSpan.textContent = currentThemeSetting === 'dark' ? 'light_mode' : 'dark_mode';
   }
+  toggleTheme(currentThemeSetting);
 
-  if (currentThemeSetting)
-    document.documentElement.dataset.theme = currentThemeSetting;
-
-  themeButtonsContainer.addEventListener('mouseleave', () => {
-    for (const button of themeButtons) button.style.visibility = 'hidden';
-  });
   themeButton.addEventListener('mouseenter', () => {
     for (const button of themeButtons) button.style.visibility = 'visible';
+  });
+  themeButtonsContainer.addEventListener('mouseleave', () => {
+    for (const button of themeButtons) button.style.visibility = 'hidden';
   });
 
   themeButton.addEventListener('click', () => {
@@ -47,9 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   themeButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      let classes = button.className.split(' ');
-
-      const selectedTheme = classes.find((c) => c.startsWith('theme-')).replace('theme-', '');
+      const selectedTheme = button.className.split(' ').find((c) => c.startsWith('theme-')).replace('theme-', '');
 
       if (selectedTheme && themes.has(selectedTheme)) {
         toggleTheme(selectedTheme);
